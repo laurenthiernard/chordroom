@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f4f8">
+  <meta name="description" content="Explore the chords inside a scale and hear how each degree sounds.">
+  <title>ChordRoom Plus — Explore chords in a scale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar"><a class="brand" href="#" aria-label="ChordRoom Plus home"><span class="brand-mark">♪</span><span>chord<span class="brand-light">room</span><sup class="plus-mark">+</sup></span></a><div class="top-note"><span class="live-dot"></span> Explore the harmony inside a scale</div></header>
+    <section class="intro"><div class="eyebrow">PLAY · EXPLORE · UNDERSTAND</div><h1>Hear how scales connect.</h1><p>Choose a scale, then play a note to hear its chord.</p></section>
+    <section class="plus-layout" aria-label="Scale chord explorer">
+      <section class="builder-panel scale-panel"><div class="panel-heading"><div><span class="step-label">01 / CHOOSE YOUR SCALE</span><h2>Set the sound</h2></div></div>
+        <div class="scale-selectors"><label class="field-label" for="tonic">KEY</label><select id="tonic" aria-label="Scale tonic"></select><label class="field-label scale-type-label" for="scale-type">SCALE</label><select id="scale-type" aria-label="Scale type"></select></div>
+        <p class="scale-description" id="scale-description"></p>
+      </section>
+      <section class="result-panel chord-panel"><div class="result-top"><span class="step-label">02 / THE CURRENT CHORD</span><span class="playing-indicator"><span class="pulse"></span> <span id="degree-status">CHOOSE A SCALE NOTE</span></span></div>
+        <div class="chord-identity"><div><div class="chord-symbol" id="chord-symbol">—</div><div class="chord-subtitle" id="chord-subtitle">Choose one of the highlighted scale notes</div></div><div class="degree-badge" id="degree-badge">—</div></div>
+        <div class="construction-caption"><span>CHORD NOTES</span><span>INTERVAL & SCALE DEGREE</span></div><div class="note-cards" id="note-cards" aria-live="polite"><div class="empty-construction">Your chord notes will appear here.</div></div>
+        <div class="chord-actions"><div class="sound-picker"><label for="instrument">SOUND</label><select id="instrument" aria-label="Instrument"><option value="piano">Soft piano</option><option value="warm">Warm keys</option><option value="glass">Glass synth</option></select></div><div class="volume-control"><label for="volume">VOLUME</label><input id="volume" type="range" min="0" max="100" value="65" aria-label="Volume"><span id="volume-value">65%</span></div><button class="play-button" id="play-chord" aria-label="Play current chord" disabled><span>▶</span><span class="play-label">Play chord</span></button></div>
+      </section>
+    </section>
+    <section class="keyboard-section"><div class="keyboard-heading"><div><span class="step-label">03 / PLAY A SCALE DEGREE</span><h2>Choose a chord root</h2></div><div class="keyboard-help"><span class="click-icon">↖</span> Coloured keys belong to the scale · click to hear the chord</div></div><div class="keyboard-frame"><div class="keyboard" id="keyboard" aria-label="Two octave piano keyboard"></div><div class="keyboard-footer"><span>Two octaves · C4 to B5</span><span id="root-hint">Select a key and its in-scale chord will play</span></div></div></section>
+    <footer><span class="footer-mark">♪</span><span>Music theory, by ear.</span><span class="footer-right">ChordRoom Plus · Scale harmony explorer</span></footer>
+  </main><script src="app.js"></script>
+</body>
+</html>

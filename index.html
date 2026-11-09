@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4f8">
+  <meta name="description" content="Build, hear, and understand chords on an interactive piano keyboard.">
+  <title>Chord Room — Hear how chords are built</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Chord Room home"><span class="brand-mark">♪</span><span>chord<span class="brand-light">room</span></span></a>
+      <div class="top-note"><span class="live-dot"></span> A little room to hear things differently</div>
+    </header>
+
+    <section class="intro">
+      <div class="eyebrow">PLAY · EXPLORE · UNDERSTAND</div>
+      <h1>Find your chord.</h1>
+      <p>Choose a sound, press any key, and see how the notes fit together.</p>
+    </section>
+
+    <section class="studio" aria-label="Chord builder">
+      <div class="builder-panel">
+        <div class="panel-heading"><div><span class="step-label">01 / SHAPE YOUR SOUND</span><h2>Build a chord</h2></div><div class="sound-picker"><label for="instrument">VOICE</label><select id="instrument" aria-label="Instrument"><option value="piano">Soft piano</option><option value="warm">Warm keys</option><option value="glass">Glass synth</option></select></div></div>
+
+        <div class="control-group"><div class="group-title"><span>Chord quality</span><span class="group-hint">Choose a foundation</span></div><div class="segmented" id="quality-controls" role="group" aria-label="Chord quality">
+          <button class="segment active" data-quality="major">Major</button><button class="segment" data-quality="minor">Minor</button><button class="segment" data-quality="diminished">Diminished</button><button class="segment" data-quality="augmented">Augmented</button><button class="segment" data-quality="sus2">Sus 2</button><button class="segment" data-quality="sus4">Sus 4</button>
+        </div></div>
+
+        <div class="control-group add-ons"><div class="group-title"><span>Add colour</span><span class="group-hint">Optional tones</span></div><div class="pill-row" id="extension-controls" role="group" aria-label="Chord extensions">
+          <button class="pill" data-ext="6">6th</button><button class="pill" data-ext="7">7th</button><button class="pill" data-ext="maj7">Maj 7</button><button class="pill" data-ext="9">9th</button><button class="pill" data-ext="11">11th</button><button class="pill" data-ext="13">13th</button>
+        </div></div>
+
+        <div class="bottom-controls"><div class="control-group inversion"><div class="group-title"><span>Inversion</span><span class="group-hint">Change the bass note</span></div><div class="select-wrap"><select id="inversion" aria-label="Chord inversion"><option value="0">Root position</option><option value="1">1st inversion</option><option value="2">2nd inversion</option><option value="3">3rd inversion</option></select><span class="chevron">⌄</span></div></div>
+          <div class="volume-control"><div class="volume-top"><label for="volume">Volume</label><span id="volume-value">65%</span></div><input id="volume" type="range" min="0" max="100" value="65" aria-label="Volume"></div>
+        </div>
+      </div>
+
+      <div class="result-panel">
+        <div class="result-top"><span class="step-label">02 / LISTEN & LEARN</span><span class="playing-indicator"><span class="pulse"></span> READY TO PLAY</span></div>
+        <div class="chord-identity"><div><div class="chord-symbol" id="chord-symbol">C</div><div class="chord-subtitle" id="chord-subtitle">C major triad</div></div><button class="play-button" id="play-chord" aria-label="Play chord"><span>▶</span><span class="play-label">Play chord</span></button></div>
+        <div class="note-cards" id="note-cards" aria-live="polite"></div>
+        <div class="scales-block"><div class="scales-heading"><div><span class="step-label">A PLACE TO START</span><h3>Scales that fit</h3></div><span class="scales-caption">Your chord, in context</span></div><div class="scale-list" id="scale-list"></div></div>
+      </div>
+    </section>
+
+    <section class="keyboard-section"><div class="keyboard-heading"><div><span class="step-label">03 / FIND A ROOT</span><h2>Play the keyboard</h2></div><div class="keyboard-help"><span class="click-icon">↖</span> Click any white or black key</div></div><div class="keyboard-frame"><div class="keyboard" id="keyboard" aria-label="Two octave piano keyboard"></div><div class="keyboard-footer"><span>Two octaves · Middle C to B</span><span id="root-hint">Choose a key to begin</span></div></div></section>
+
+    <footer><span class="footer-mark">♪</span><span>Music theory, by ear.</span><span class="footer-right">Take your time. Try something unexpected.</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
